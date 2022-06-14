@@ -1,16 +1,16 @@
 package com.example
 
-import groovy.transform.CompileStatic
 import io.micronaut.context.MessageSource
 import io.micronaut.context.annotation.Bean
+import io.micronaut.context.annotation.Context
+import io.micronaut.context.annotation.Factory
 import io.micronaut.context.i18n.ResourceBundleMessageSource
-import io.micronaut.runtime.Micronaut
+import io.micronaut.runtime.context.CompositeMessageSource
+import jakarta.inject.Inject
 
-@CompileStatic
-class Application {
-    static void main(String[] args) {
-        Micronaut.run(Application, args)
-    }
+@Context
+@Factory
+class MessageSourceFactory {
 
     @Bean
     MessageSource messageSource() {

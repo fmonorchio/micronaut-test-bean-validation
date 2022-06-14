@@ -1,5 +1,6 @@
 package com.example
 
+import io.micronaut.context.MessageSource
 import io.micronaut.runtime.EmbeddedApplication
 import io.micronaut.test.extensions.spock.annotation.MicronautTest
 import io.micronaut.validation.validator.Validator
@@ -13,6 +14,9 @@ class DemoSpec extends Specification {
 
     @Inject
     Validator validator
+
+    @Inject
+    MessageSource messageSource
 
     @Inject
     EmbeddedApplication<?> application
